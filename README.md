@@ -23,7 +23,7 @@ Which is a website created for that purpose.<br />
 Clone the repository
 
 ```bash
-git clone https://github.com/ViniciusLucchesi/book_scraper.git
+git clone https://github.com/ViniciusLucchesi/book-scraper.git
 ```
 
 Compiles the project with all its dependencies defined in the Cargo.toml file and Run it afterwards
@@ -40,7 +40,7 @@ This crate is an HTML parsing and query with CSS selectors that allow us to extr
 
 Scraper provides an interface to Servo’s html5ever and selectors crates, for browser-grade parsing and querying.
 
-Its resources were used in both the main.rs and models.rs files, allowing the creation of the SELECTORS necessary for the project as well as the structuring of a new type called ModelSelector, respectively.
+Its resources were used in both the `models.rs` and `main.rs` files, allowing the structuring of a new type called **ModelSelector** as well as the creation of the **selectors** necessary for the project, respectively.
 
 ```rust
 // src/models.rs

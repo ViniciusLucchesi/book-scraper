@@ -14,15 +14,14 @@ fn create_selectors() -> ModelSelector {
     let book_selector: Selector = Selector::parse("article.product_pod").unwrap();
     let book_name_selector: Selector = Selector::parse("h3 a").unwrap();
     let book_price_selector: Selector = Selector::parse(".price_color").unwrap();
-    let book_link_selector: Selector = Selector::parse("h3 a").unwrap();
+    let book_link_selector: Selector = Selector::parse(".image_container a").unwrap();
     
-    ModelSelector { 
+    ModelSelector {
         book: book_selector,
         book_name: book_name_selector,
         book_price: book_price_selector,
         book_link: book_link_selector
-    }
-    
+    }    
 }
 
 fn generate_csv_file(document: Html, response: ModelResponse, selector: ModelSelector) {    
@@ -46,8 +45,8 @@ fn generate_csv_file(document: Html, response: ModelResponse, selector: ModelSel
 
 
 fn main() {
-    let url: &str = "https://books.toscrape.com/";
-    let body: String = get_html_page(url);    
+    let url: &str = "https://books.toscrape.com";
+    let body: String = get_html_page(url);
     let response: ModelResponse = ModelResponse::new(body, url);
 
     let selector: ModelSelector = create_selectors();
